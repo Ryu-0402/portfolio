@@ -1,26 +1,74 @@
-@import "tailwindcss";
+@import "tailwindcss";  
+@tailwind utilities;  
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body, html {   
+    margin: 0;   
+    padding: 0;   
+    height: 100%;   
+    background: linear-gradient(to bottom, #0569a3 0%, #001f33 100%);   
+    overflow: hidden;   
+    font-family: sans-serif; 
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* 光の筋 */
+.ray {   
+    position: absolute; 
+     
+    width: 33%;   
+    height: 300vh;   
+    transform: rotate(15deg);   
+    transform-origin: top center;   
+    background:      
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.2), transparent),     
+        linear-gradient(to right, transparent, rgba(235, 246, 250, 0.4) 50%, transparent);   
+    opacity: 0.3;   
+    mix-blend-mode: screen;   
+    pointer-events: none; 
+    filter: blur(25px);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@keyframes slow-move-left {   
+    from { transform:  translateX(
+      0); }   
+    to { transform: translateX(-40%); } 
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.ray-wrapper {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  animation: slow-move-left 80s linear infinite;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.bubble-container{
+    width: 115px;
+    height: 115px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    /* box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); */
+    animation: float-updown 3s ease-in-out infinite;
+}
+
+@keyframes float-updown{
+    0%,100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(5px); 
+    }
+}
+
+.bubble-container:hover{
+    animation: bubble-pop 0.9s ease-in-out ;
+}
+
+
+@keyframes bubble-pop {
+  0%   { transform: translateY(0); }
+  25%  { transform: translateY(-8px); }
+  50%  { transform: translateY(4px); }
+  75% { transform: translateY(-2px); }
+  100% { transform: translateY(0); }
 }
