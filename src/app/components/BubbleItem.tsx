@@ -1,13 +1,14 @@
 "use client";
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import Image from "next/image";
 
 interface BubbleItemProps {
   iconSrc?: string;
   label?: string;
+  iconComponent?:ReactNode
 }
 
-export default function BubbleItem({ iconSrc, label }: BubbleItemProps) {
+export default function BubbleItem({ iconSrc, label,iconComponent }: BubbleItemProps) {
   const [animationStyle, setAnimationStyle] = useState({});
   const [isAnimating, setIsAnimating] = useState(false); // 🔥 アニメ中フラグ
 
@@ -29,6 +30,7 @@ export default function BubbleItem({ iconSrc, label }: BubbleItemProps) {
       style={animationStyle}
       className="flex flex-col items-center justify-center w-[115px] p-2 mr-[5px] bubble-container"
     >
+      {iconComponent && iconComponent}
       {iconSrc && (
         <Image
           src={iconSrc}

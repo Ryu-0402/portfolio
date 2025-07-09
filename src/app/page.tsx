@@ -69,24 +69,21 @@ export default function Home() {
 {/* skills,projects */}
         <div className="relative flex flex-1 mt-10">
     {/* skills */}
-          <div className="flex flex-col bg-blue-700 mr-auto">
+          <div className="flex flex-col bg-blue-700 ml-[10px] mr-auto">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl">
               Skills
             </h1>
 
             <div className="flex flex-row mt-5">
-              <div className="flex flex-col items-center">
-                <SiHtml5 size={60} className="text-[#e34f26]"/>
-                <p></p>
-              </div>
-              <div className="flex flex-col items-center">
-                <SiCss3 size={60} className="text-[#1572b6]"/>
-                <p></p>
-              </div>
-              <div className="flex flex-col items-center">
-                <SiJavascript size={60} className="text-[#f7df1e]"/>
-                <p></p>
-              </div>
+              <BubbleItem 
+                iconComponent={<SiHtml5 size={60} className="text-[#e34c26]" />}
+              />
+              <BubbleItem 
+                iconComponent={<SiCss3 size={60} className="text-[#264de4]" />}
+              />
+              <BubbleItem 
+                iconComponent={<SiJavascript size={60} className="text-[#f7df1e]" />}
+              />
               <div className="flex flex-col items-center">
                 <SiTypescript size={60} className="text-[#3178c6]"/>
                 <p></p>
@@ -125,10 +122,6 @@ export default function Home() {
             <div className="flex flex-row mt-5">
               <BubbleItem iconSrc="/photoタイマー-icon.png" label="photoタイマー"/>
               <BubbleItem label="ポートフォリオ"/>
-              <div className="flex flex-col items-center w-[115px] p-2">
-              <p className="text-[12px]">
-              </p>
-              </div>
             </div>
           </div>
     {/* projects end */}
