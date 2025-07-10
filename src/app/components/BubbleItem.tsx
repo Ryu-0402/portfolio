@@ -4,37 +4,47 @@ import Image from "next/image";
 
 interface BubbleItemProps {
   iconSrc?: string;
-  label?: string;
-  iconComponent?:ReactNode
+  alt?: string;
+  label?: string | ReactNode;
+  iconComponent?: ReactNode;
+  onClick?: () => void;
 }
 
-export default function BubbleItem({ iconSrc, label,iconComponent }: BubbleItemProps) {
+export default function BubbleItem({ iconSrc, alt, label, iconComponent, onClick }: BubbleItemProps) {
   const [animationStyle, setAnimationStyle] = useState({});
-  const [isAnimating, setIsAnimating] = useState(false); // 🔥 アニメ中フラグ
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const handleHover = () => {
-    if (isAnimating) return; // 🔥 アニメ中は無視
+    if (isAnimating) return;
     setIsAnimating(true);
 
-    setAnimationStyle({ animation: "bubble-pop 0.4s ease-out" });
+    setAnimationStyle({ animation: "bubble-pop 0.6s ease-out" });
 
     setTimeout(() => {
       setAnimationStyle({});
-      setIsAnimating(false); // 🔥 アニメ終了後に再度受け付け可能
-    }, 400);
+      setIsAnimating(false);
+    }, 500);
   };
+
+  const altText =
+    typeof alt === "string" && alt.trim() !== ""
+      ? alt
+      : typeof label === "string"
+      ? label
+      : "icon";
 
   return (
     <div
       onMouseEnter={handleHover}
+      onClick={onClick}
       style={animationStyle}
-      className="flex flex-col items-center justify-center w-[115px] p-2 mr-[5px] bubble-container"
+      className="flex flex-col items-center justify-center w-[115px] p-2 mr-[5px] bubble-container cursor-pointer"
     >
       {iconComponent && iconComponent}
       {iconSrc && (
         <Image
           src={iconSrc}
-          alt={label || "icon"}
+          alt={altText}
           width={60}
           height={60}
         />
