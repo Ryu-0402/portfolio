@@ -36,38 +36,35 @@ body, html {
   position: absolute;
   width: 100vw;
   height: 100vh;
-  animation: slow-move-left 80s linear infinite;
+  animation: slow-move-left 70s linear infinite;
   pointer-events: none;
   overflow: visible;
 }
 
-.bubble-container{
-    width: 115px;
-    height: 115px;
+.bubble-container {
+    width: clamp(40px, 8vw, 110px);
+    height:clamp(40px, 8vw, 110px);
     border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.242);
     /* box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); */
     animation: float-updown 3s ease-in-out infinite;
 }
+
 
 @keyframes float-updown{
     0%,100% {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(5px); 
+        transform: translateY(6%); 
     }
 }
 
-.bubble-container:hover{
-    animation: bubble-pop 0.9s ease-in-out ;
-}
-
-
 @keyframes bubble-pop {
   0%   { transform: translateY(0); }
-  25%  { transform: translateY(-8px); }
-  50%  { transform: translateY(4px); }
-  75% { transform: translateY(-2px); }
+  25%  { transform: translateY(-8%); }
+  50%  { transform: translateY(4%); }
+  75% { transform: translateY(-1%); }
+  90% { transform: translateY(0.3%%); }
   100% { transform: translateY(0); }
 }
