@@ -23,9 +23,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja" className="h-full">
+    <html lang="ja" 
+      className="overflow-x-hidden
+      bg-[#021428]"
+      style={{}}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased h-hull relative`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased  relative`}
+        style={{
+        }}
       >
         {children}
       </body>

@@ -1,20 +1,14 @@
 @import "tailwindcss";  
 @tailwind utilities;  
 
-body, html {   
-    margin: 0;   
-    padding: 0;   
-    height: 100%;   
-    background: linear-gradient(to bottom, #0569a3 0%, #001f33 100%);      
-    font-family: sans-serif; 
-}
+
 
 /* 光の筋 */
 .ray {   
     position: absolute; 
      
     width: 33%;   
-    height: 300vh;   
+    height: 150vh;   
     transform: rotate(15deg);   
     transform-origin: top center;   
     background:      
@@ -24,6 +18,24 @@ body, html {
     mix-blend-mode: screen;   
     pointer-events: none; 
     filter: blur(25px);
+    z-index: 20;
+}
+
+.ray2 {   
+    position: absolute; 
+     
+    width: 5%;   
+    height: 150vh;   
+    transform: rotate(15deg);   
+    transform-origin: top center;   
+    background:      
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.2), transparent),     
+        linear-gradient(to right, transparent, rgba(235, 246, 250, 0.4) 50%, transparent);   
+    opacity: 0.1;   
+    mix-blend-mode: screen;   
+    pointer-events: none; 
+    filter: blur(20px);
+    z-index: 10;
 }
 
 @keyframes slow-move-left {   
@@ -35,10 +47,22 @@ body, html {
 .ray-wrapper {
   position: absolute;
   width: 100vw;
-  height: 100vh;
-  animation: slow-move-left 70s linear infinite;
+  height: 150vh;
+  animation: slow-move-left 20s linear infinite;
   pointer-events: none;
   overflow: visible;
+  z-index: 20;
+}
+
+.ray-wrapper2 {
+  position: absolute;
+  row-gap: 30%;
+  width: 100vw;
+  height: 160vh;
+  animation: slow-move-left 40s linear infinite;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 10;
 }
 
 .bubble-container {
@@ -67,4 +91,73 @@ body, html {
   75% { transform: translateY(-1%); }
   90% { transform: translateY(0.3%%); }
   100% { transform: translateY(0); }
+}
+
+.responsive-height {
+    height: clamp(100vh, 130vh, 1500px);
+    overflow: hidden; /* はみ出した光の筋を隠す */
+}
+
+/* 非常に幅の狭い画面 */
+@media (max-width: 375px) {
+    .responsive-height {
+        height: 600px;
+        overflow: hidden;
+    }
+}
+
+/* スマートフォン（縦向き） */
+@media (max-width: 640px) and (orientation: portrait) {
+    .responsive-height {
+        height: 500px;
+        overflow: hidden;
+    }
+}
+
+/* スマートフォン（横向き） */
+@media (max-width: 640px) and (orientation: landscape) {
+    .responsive-height {
+        height: 550px;
+        overflow: hidden;
+    }
+}
+
+/* タブレット（縦向き） */
+@media (min-width: 641px) and (max-width: 768px) and (orientation: portrait) {
+    .responsive-height {
+        height: 550px;
+        overflow: hidden;
+    }
+}
+
+/* タブレット（横向き） */
+@media (min-width: 641px) and (max-width: 768px) and (orientation: landscape) {
+    .responsive-height {
+        height: 550px;
+        overflow: hidden;
+    }
+}
+
+/* 中型タブレット・小型ラップトップ */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .responsive-height {
+        height: 600px;
+        overflow: hidden;
+    }
+}
+
+/* デスクトップ */
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .responsive-height {
+        height: 750px;
+        overflow: hidden;
+    }
+}
+
+/* 大型デスクトップ */
+@media (min-width: 1281px) {
+    .responsive-height {
+        height: 750px;
+        overflow: hidden;
+    }
 }

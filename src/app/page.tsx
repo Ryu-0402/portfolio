@@ -13,19 +13,42 @@ export default function Home() {
   const [ selectedBubble, setSelectedBubble ] = useState<string | null>(null);
 
   return (
-    <div className="relative flex flex-col h-full  text-white bg-gradient-to-b from-[#12aad3] via-[#09114e] to-[#000000] overflow-x-hidden">
-
-    <div>
-      <div className="ray-wrapper">
-      <div className="ray left-0 "/>
-      <div className="ray left-[40%] "/>
-      <div className="ray left-[80%]  "/>
-      <div className="ray left-[120%] "/>
+    <div 
+      className="relative flex flex-col   text-white bg-gradient-to-b from-[#12aad3] via-[#09305c] to-[#021428] z-0 overflow-hidden responsive-height"
+      style={{}}>
+      <div>
+        <div className="ray-wrapper">
+        <div className="ray left-0 "/>
+        <div className="ray left-[40%] "/>
+        <div className="ray left-[80%]  "/>
+        <div className="ray left-[120%] "/>
       </div>
-      <BubbleCanvas />      
+
+      <div className="ray-wrapper2">
+        <div className="ray2 left-[0%] "/>
+        <div className="ray2 left-[10%] "/>
+        <div className="ray2 left-[20%] "/>
+        <div className="ray2 left-[30%] "/>
+        <div className="ray2 left-[40%] "/>
+        <div className="ray2 left-[50%]  "/>
+        <div className="ray2 left-[60%] "/>
+        <div className="ray2 left-[70%] "/>
+        <div className="ray2 left-[80%] "/>
+        <div className="ray2 left-[90%] "/>
+        <div className="ray2 left-[100%] "/>
+        <div className="ray2 left-[110%] "/>
+        <div className="ray2 left-[120%] "/>
+        <div className="ray2 left-[130%] "/>
+        <div className="ray2 left-[140%] "/>
+        <div className="ray2 left-[150%] "/>
+        <div className="ray2 left-[160%] "/>
+        <div className="ray2 left-[170%] "/>
+        <div className="ray2 left-[180%] "/>
+      </div>
+      <BubbleCanvas/>      
     </div>
       
-      <main className="relative flex flex-col z-20 h-full">
+      <main className="relative flex flex-col h-auto z-40">
 
 {/* about */}
         <div className = "flex flex-row justify-center mt-[4%] gap-x-[5%]"> 
@@ -33,8 +56,7 @@ export default function Home() {
             className="relative w-[60px] h-[80px]
             sm:w-[60px] sm:h-[80px]
             md:w-[81px] md:h-[108px]
-            lg:w-[90px] lg:h-[120px]"
-            
+            lg:w-[90px] lg:h-[120px]"  
           >
           <Image
             className="object-cover"
