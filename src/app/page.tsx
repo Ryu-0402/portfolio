@@ -22,6 +22,7 @@ export default function Home() {
         <div className="ray left-[40%] "/>
         <div className="ray left-[80%]  "/>
         <div className="ray left-[120%] "/>
+        <div className="ray left-[160%] "/>
       </div>
 
       <div className="ray-wrapper2">
@@ -50,8 +51,17 @@ export default function Home() {
       
       <main className="relative flex flex-col h-auto z-40">
 
+{/* header */}
+        <header className="">
+          <p 
+            className="text-center mt-[2%]"
+            style={{ fontSize:"clamp(6px,calc(0.7vw + 4px),17px) "}}>
+            更新日: 2025/7/19
+          </p>
+        </header>
+
 {/* about */}
-        <div className = "flex flex-row justify-center mt-[4%] gap-x-[5%]"> 
+        <div className = "flex flex-row justify-center mt-[1%] gap-x-[5%]"> 
           <div 
             className="relative w-[60px] h-[80px]
             sm:w-[60px] sm:h-[80px]
@@ -74,15 +84,12 @@ export default function Home() {
             </h1>
             <div 
               className=""
-              style={{ fontSize:"clamp(9px,2vw,17px) "}}>
+              style={{ fontSize:"clamp(10px,2vw,17px) "}}>
               <p className="mb-[2%]">
                 豊橋技術科学大学工学部情報・知能工学科2年(2028年3月卒業予定)
               </p>
               <p>
-                web,アプリ開発のバックエンド、フロントエンド共に関心を持っています。
-              </p>
-              <p>
-                見やすく使いやすい設計を考えることが好きです。
+                webサイト,アプリ開発のバックエンドと今は特にフロントエンドを学習しているところで、ユーザーの気持ちを考えた設計にこだわっています。まだ経験は浅いですが、このAIの時代、いろんなことに挑戦しやすいチャンスなのでどんどんスキルアップしていきたいです。
               </p>
             </div>
           </div>
@@ -169,7 +176,7 @@ export default function Home() {
     {/* details */}
           <div 
             className="absolute left-1/2 transform -translate-x-1/2 flex flex-col items-center  w-[35%] h-[80%]"
-            style={{fontSize:"clamp(10px,vw,20px) "}}
+            style={{fontSize:"clamp(9px,calc(0.9vw + 5px),30px) "}}
           >
               {selectedBubble === null &&(
                 <h1 className="text-center"
@@ -182,9 +189,10 @@ export default function Home() {
                 <div className="flex flex-col ">
                   <h2 className=" text-center
                   mb-[5%]"
-                  style={{fontSize:"clamp(25px,4vw,50px)"}}>HTML</h2>
-                  <p>HTMLはウェブページの構造を定義するためのマークアップ言語です。</p>
-                  <p>基本的なタグや属性を理解し、セマンティックなマークアップを心がけています。</p>
+                  style={{fontSize:"clamp(25px,4.5vw,50px)"}}>HTML</h2>
+                  <p>
+                    　初心者には一番簡単だと聞いたので一番最初に学んだ言語です。高校の時にprogateの無料の部分だけやりました。大学では1年生の時にプログラミングの授業やUdemyで基礎的な部分を学びました。最近はNext.jsやreact native上でhtmlが登場します。素のhtmlファイルで書くこともありますが、その場合はAIのコードを少し改変するくらいで済むことが多いです。
+                  </p>
                 </div>
               )}
               
@@ -192,8 +200,7 @@ export default function Home() {
                 <div className="flex flex-col ">
                   <h2 className=" text-center mb-[5%]"
                   style={{fontSize:"clamp(25px,4vw,50px)"}}>CSS</h2>
-                  <p>CSSはウェブページのスタイルを定義するためのスタイルシート言語です。</p>
-                  <p>レイアウト、色、フォントなどを調整し、レスポンシブデザインにも対応しています。</p>
+                  <p>　html同様、高校でprogate、大学一年生で授業とUdemyで学びました。最近はNext.jsやreact nativeで、tailwind.css, global.cssとして使うことが多いです。Bootstrapというフレームワークを学びましたが、まだ使う機会はないです。</p>
                 </div>
               )}
 
@@ -201,8 +208,7 @@ export default function Home() {
                 <div className="flex flex-col ">
                   <h2 className=" text-center mb-[5%]"
                   style={{fontSize:"clamp(25px,4vw,50px)"}}>JavaScript</h2>
-                  <p>JavaScriptはウェブページに動的な機能を追加するためのプログラミング言語です。</p>
-                  <p>DOM操作やイベント処理、非同期通信などを利用して、インタラクティブなウェブアプリケーションを作成します。</p>
+                  <p>　html,cssを学んだ後、同じ言語でフルスタックができるというところに魅力を感じたのでこの言語をメインに学んでいこうと決心しました。大学1年生でUdemy,公式ドキュメントなどで文法や基礎知識を軽く学び、練習としてAIを用いながら素のjavascriptでとてもシンプルなtodoリストなどを作ったりしました。その後は主に1年生の春休み中、node.jsやreactにも触れようと考え、海外のyoutubeのコーディング動画を真似してフルスタック(主にバックエンド)を軽く学びました。その時、DBとしてmongoDB,APIのテストツールとしてpostmanを触れました。最近はtypescriptに乗り換えています。</p>
                 </div>
               )}
 
@@ -210,8 +216,9 @@ export default function Home() {
                 <div className="flex flex-col ">
                   <h2 className=" text-center mb-[5%]"
                   style={{fontSize:"clamp(25px,4vw,50px)"}}>TypeScript</h2>
-                  <p>TypeScriptはJavaScriptのスーパーセットで、型安全性を提供します。</p>
-                  <p>大規模なアプリケーション開発において、コードの可読性と保守性を向上させるために使用しています。</p>
+                  <p>
+                   　javascriptよりも安全な言語だと知ってtypescriptを学び始めました。Next.jsやexpoを用いてwebサイトやアプリを開発しました。javascriptの文法を学んだので割と早く慣れてきました。
+                  </p>
                 </div>
               )}
 
@@ -219,8 +226,7 @@ export default function Home() {
                 <div className="flex flex-col ">
                   <h2 className=" text-center mb-[5%]"
                   style={{fontSize:"clamp(25px,4vw,50px)"}}>Python</h2>
-                  <p>Pythonは汎用的なプログラミング言語で、データ分析や機械学習など幅広い分野で使用されています。</p>
-                  <p>簡潔な構文と豊富なライブラリが特徴で、バックエンド開発にも利用しています。</p>
+                  <p>　就活の際の面接のコーディングテストでtypescriptよりやりやすいだろうと考えたため最近学び始めました。AtCoderにもっと参加したいのでバイトが被らないようにずらそうと思っています。ゆくゆくはpythonの実践的なスキルも手札として身に付けたいと考えています。</p>
                 </div>
               )}
 
@@ -228,8 +234,9 @@ export default function Home() {
                 <div className="flex flex-col ">
                   <h2 className=" text-center mb-[5%]"
                   style={{fontSize:"clamp(22px,3.5vw,50px)"}}>基本情報技術者試験</h2>
-                  <p>基本情報技術者試験は、ITエンジニアの基礎的な知識と技能を評価する試験です。</p>
-                  <p>プログラミング、ネットワーク、データベースなどの幅広い分野にわたる知識が求められます。</p>
+                  <p>
+                    　大学1年生の夏休みに取得しました。IT全般について全然分からない状態だったので本格的にプログラミングをやっていく前に取ろうと考えていました。また、情報系の学科なので予習に丁度いいと思い取得しました。資格で言ったら、最近は極稀にAWSの資格の勉強をすることはありますが、より実践的な実力を上げることを重要視しているので、とりあえずはITの資格は基本情報だけでいいかなと考えています。
+                  </p>
                 </div>
               )}
 
@@ -237,8 +244,8 @@ export default function Home() {
                 <div className="flex flex-col ">
                   <h2 className=" text-center mb-[5%]"
                   style={{fontSize:"clamp(25px,4vw,50px)"}}>TOEIC</h2>
-                  <p>TOEICは英語のコミュニケーション能力を測定する試験です。</p>
-                  <p>リスニングとリーディングのスキルを評価し、国際的なビジネス環境での英語力を証明します。</p>
+                  <p>　大学入学前の課題として受けなければならないことを知って旅行中に初めて受験し、TOEIC IPで550点でした。入学後から少しずつTOEICの対策をして、冬休みに追い込んで1年生の1月に個人受験で735点でした。そして3月にはまたTOEIC IPですが800点でした。最近はプログラミングにより集中するため英語の勉強は個人ではしていませんが、在学中に800点後半ほど取れるようになるのが目標です。ITに限った話ではないと思いますが、話す言語が増えるほど活動範囲や情報源が広まると考えているので、今は英語で精一杯ですが、長い目で見れば他の言語を学ぶのもいい選択肢なのではないかなと考えています。
+                  </p>
                 </div>
               )}
 
@@ -246,9 +253,9 @@ export default function Home() {
                 <div className="flex flex-col ">
                   <h2 className=" text-center mb-[5%]"
                   style={{fontSize:"clamp(25px,4vw,50px)"}}>Photoタイマー</h2>
-                  <p>Photoタイマーは、写真撮影のタイマー機能を提供するアプリケーションです。</p>
-                  <p>ユーザーが指定した時間に写真を自動で撮影できるようにします。</p>
-                  <p>ReactとTypeScriptを使用して開発され、ユーザーインターフェースはシンプルで直感的です。</p>
+                  <p>
+                    
+                  </p>
                 </div>
               )}
 

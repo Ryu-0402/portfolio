@@ -27,6 +27,7 @@ export default function RootLayout({
       className="overflow-x-hidden
       bg-[#021428]"
       style={{}}>
+        
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased  relative`}
         style={{
