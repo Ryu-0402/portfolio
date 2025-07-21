@@ -94,7 +94,7 @@
 }
 
 .responsive-height {
-    height: clamp(10vh, 130vh, 1500px);
+    height: clamp(10vh, 140vh, 1500px);
     overflow: hidden; /* はみ出した光の筋を隠す */
 }
 
@@ -109,7 +109,7 @@
 /* スマートフォン（縦向き） */
 @media (max-width: 640px) and (orientation: portrait) {
     .responsive-height {
-        height: clamp(10vh, 100vh, 1500px);
+        height: clamp(10vh, 130vh, 1500px);
         overflow: hidden;
     }
 }
@@ -117,7 +117,7 @@
 /* スマートフォン（横向き） */
 @media (max-width: 640px) and (orientation: landscape) {
     .responsive-height {
-        height: clamp(10vh, 100vh, 1500px);
+        height: clamp(10vh, 130vh, 1500px);
         overflow: hidden;
     }
 }
@@ -125,7 +125,7 @@
 /* タブレット（縦向き） */
 @media (min-width: 641px) and (max-width: 768px) and (orientation: portrait) {
     .responsive-height {
-        height: clamp(10vh, 100vh, 1500px);
+        height: clamp(10vh, 140vh, 1500px);
         overflow: hidden;
     }
 }
@@ -133,7 +133,7 @@
 /* タブレット（横向き） */
 @media (min-width: 641px) and (max-width: 768px) and (orientation: landscape) {
     .responsive-height {
-        height:clamp(10vh, 100vh, 1500px);
+        height:clamp(10vh, 140vh, 1500px);
         overflow: hidden;
     }
 }
@@ -141,7 +141,7 @@
 /* 中型タブレット・小型ラップトップ */
 @media (min-width: 769px) and (max-width: 1024px) {
     .responsive-height {
-        height: clamp(10vh, 130vh, 1500px);
+        height: clamp(10vh, 170vh, 1500px);
         overflow: hidden;
     }
 }
@@ -149,7 +149,7 @@
 /* デスクトップ */
 @media (min-width: 1025px) and (max-width: 1280px) {
     .responsive-height {
-        height: clamp(10vh, 130vh, 1500px);
+        height: clamp(10vh, 170vh, 1500px);
         overflow: hidden;
     }
 }
@@ -157,7 +157,7 @@
 /* 大型デスクトップ */
 @media (min-width: 1281px) {
     .responsive-height {
-        height: clamp(10vh, 130vh, 1500px);
+        height: clamp(10vh, 170vh, 1500px);
         overflow: hidden;
     }
 }
