@@ -76,7 +76,7 @@ export default function BubbleCanvas() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       const scrollY = window.scrollY;
 
-      for (let bubble of bubbles) {
+      for (const bubble of bubbles) {
         bubble.age += 1;
         bubble.x += bubble.speedX;
         bubble.y += bubble.speedY;
