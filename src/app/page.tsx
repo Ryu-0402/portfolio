@@ -304,6 +304,16 @@ export default function Home() {
                 <div className="flex flex-col space-y-[3%]">
                   <h2 className="text-center mb-[5%]"
                   style={{fontSize:"clamp(25px,4vw,50px)"}}>Portfolio</h2>
+                  <div 
+                    style={{display:"block",position:"relative",width:"15%",aspectRatio:"1/1"}}
+                    className="mx-auto">
+                  <Image
+                    className=""
+                    src={"/portfolio-fabicon.png"}
+                    alt="my-picture"
+                    fill
+                  />
+                  </div>
                   <p>
                     説明：このサイトのこと(個人開発)
                   </p>
@@ -340,6 +350,7 @@ export default function Home() {
                 iconSrc="/photoタイマー-icon.png" label="photoタイマー"
                 onClick={()=> setSelectedBubble("Photoタイマー")}/>
               <BubbleItem 
+                iconSrc="/portfolio-fabicon.png"
                 label="Portfolio"
                 onClick={()=>setSelectedBubble("ポートフォリオ")}/>
             </div>
